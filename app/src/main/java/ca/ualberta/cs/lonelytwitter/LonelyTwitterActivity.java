@@ -66,8 +66,16 @@ public class LonelyTwitterActivity extends Activity {
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
-				tweetList.clear();
-				deleteFile(FILENAME);  // TODO deprecate this button
+				String text = bodyText.getText().toString();
+                String query = "{\n" + " \"query\": { \"term\": {\"message\":\"" + text + "\"} }\n" + "}";
+				ElasticsearchTweetController.GetTweetsTask getTweetsTask
+						= new ElasticsearchTweetController.GetTweetsTask();
+                //String query = "{\n" + " \"query\": { \"term\": {\"message\":\"" + text + "\"} }\n" + "}";
+                tweetList.clear();
+               // ArrayList <NormalTweet> nTweetList = new ArrayList<NormalTweet>();
+                getTweetsTask.execute(query);
+				//tweetList.clear();
+				//deleteFile(FILENAME);  // TODO deprecate this button
 				adapter.notifyDataSetChanged();
 			}
 		});

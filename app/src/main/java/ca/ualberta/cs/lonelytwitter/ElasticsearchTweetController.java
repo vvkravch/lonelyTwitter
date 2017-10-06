@@ -61,6 +61,8 @@ public class ElasticsearchTweetController {
             ArrayList<NormalTweet> tweets = new ArrayList<NormalTweet>();
 
             // TODO Build the query
+
+
             /*String query = "{\n" +
                     "  \"query\": { \"match_all\": {} },\n" +
                     "  \"sort\": { \"date\": { \"order\": \"desc\" } },\n" +
