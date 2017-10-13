@@ -54,7 +54,9 @@ public class ElasticsearchTweetController {
 
     // TODO we need a function which gets tweets from elastic search
     public static class GetTweetsTask extends AsyncTask<String, Void, ArrayList<NormalTweet>> {
+
         @Override
+
         protected ArrayList<NormalTweet> doInBackground(String... search_parameters) {
             verifySettings();
 
