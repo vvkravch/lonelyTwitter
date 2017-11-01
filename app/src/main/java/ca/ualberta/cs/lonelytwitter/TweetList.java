@@ -5,9 +5,10 @@ import java.util.ArrayList;
 /**
  * Created by Vlad Kravchnko on 10/10/2017.
  */
-
-public class TweetList {
-    private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+// made package private weaker declaration access
+class TweetList {
+    //Declaration needs final modifier. Changed ti make it package private
+    private final ArrayList<Tweet> tweets = new ArrayList<Tweet>();
     //add tweet to a list of tweets
     public void addTweet (Tweet tweet) throws IllegalArgumentException {
         //for (int k = 0, k < tweets.size(), k++){
